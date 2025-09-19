@@ -1,0 +1,49 @@
+This page will have visualizations that cover the following questions:
+
+In which countries do alumnae report the highest frequency of
+disagreements with family on key life decisions (education,
+marriage, work, mobility, finances, body autonomy)?
+
+How often are these disagreements resolved favorably, and does
+resolution differ between 1-year and 5-year cohorts?
+
+Are certain disagreement topics (like education or finances) more
+likely to be resolved favorably across different contexts?
+
+How does Agency relate to subsequent choices in education, work,
+or marriage?
+
+Example of what a viz could look like:
+
+```{r}
+library(tidyverse)
+library(janitor)
+
+# Brand palette
+brand <- list(
+  teal   = "#007AA4",
+  green  = "#0C6F5A",
+  yellow = "#FFC142",
+  pink   = "#994263"
+)
+
+# Theme
+theme_rtr <- function() {
+  theme_minimal(base_family = "Georgia") +
+    theme(
+      plot.title = element_text(face = "bold", size = 18, color = "#111"),
+      plot.subtitle = element_text(size = 12, color = "#333"),
+      axis.title = element_text(size = 11, color = "#333"),
+      axis.text  = element_text(size = 10, color = "#333"),
+      panel.grid.minor = element_blank(),
+      panel.grid.major.x = element_blank(),
+      plot.margin = margin(6, 6, 6, 6)
+    )
+}
+```
+
+```{r}
+# Data
+df <- readr::read_csv("AlumnaeSurvey2324.csv")
+print(df)
+```

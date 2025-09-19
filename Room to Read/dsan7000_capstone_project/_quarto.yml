@@ -1,0 +1,17 @@
+project:
+  type: website
+  output-dir: _site
+  resources: 
+    - assets/**        
+
+website:
+  title: "Room to Read Alumnae Survey"
+
+format:
+  html:
+    theme: default
+    css: styles.css    
+    toc: false
+    smooth-scroll: true
+    mainfont: Georgia
+    monofont: "Courier New"
